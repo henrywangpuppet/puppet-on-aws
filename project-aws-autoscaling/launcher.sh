@@ -18,5 +18,3 @@ systemctl daemon-reload
 systemctl enable nodepurge.service
 systemctl start nodepurge.service
 
-#Add startup script if CM is rebooted but not being terminated
-#/bin/echo "@reboot rm -rf /etc/puppetlabs/puppet/ssl; sudo -i puppet agent -t" >> /var/spool/cron/root
