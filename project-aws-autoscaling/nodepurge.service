@@ -1,0 +1,14 @@
+[Unit]
+Description=Run mycommand at shutdown
+Requires=network.target
+DefaultDependencies=no
+Before=shutdown.target reboot.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/bash /home/ec2-user/nodepurge/startupscript.sh
+ExecStop=/bin/bash /home/ec2-user/nodepurge/purgescript.sh
+
+[Install]
+WantedBy=multi-user.target
