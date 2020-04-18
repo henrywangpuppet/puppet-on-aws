@@ -29,11 +29,12 @@ https://ip-10-0-0-100.ap-southeast-1.compute.internal:8140/puppet-ca/v1/certific
 -d "{\"command\":\"deactivate node\",\"version\":3,\"payload\":{\"certname\":\"$HOSTNAME\"}}" \
 https://ip-10-0-0-100.ap-southeast-1.compute.internal:8081/pdb/cmd/v1
 
-#Remove local SSL keys so that agent is runable next time it is booted up.
-rm -rf /etc/puppetlabs/puppet/ssl
-
 #trigger a MoM agent run to inform the compiler has been purged
 /bin/curl -k -H 'X-Authentication:0CCOlIZsIOr1fb92ER6iYbZ9RZeeMEiWyyX4U-75gQVI' \
 https://ip-10-0-0-100.ap-southeast-1.compute.internal:8143/orchestrator/v1/command/deploy \
 -X POST -d '{"environment":"production","scope": {"nodes":  ["ip-10-0-0-100.ap-southeast-1.compute.internal"]}}' \
 -H "Content-Type: application/json"
+
+#Remove local SSL keys so that agent is runable next time it is booted up.
+rm -rf /etc/puppetlabs/puppet/ssl
+
