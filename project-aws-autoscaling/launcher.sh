@@ -1,5 +1,5 @@
 #!/bin/sh
-# Setup Configuration Variables First
+#Setup Configuration Variables First
 
 momhostname=<MoM hostname>
 awslbdns=<AWS LoadBalancer DNS>
