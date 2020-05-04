@@ -8,9 +8,6 @@ rbactoken=<RBAC Token>
 #install Puppet Agent
 /bin/curl -k https://${momhostname}:8140/packages/current/install.bash | sudo bash -s main:dns_alt_names=$awslbdns extension_requests:pp_role=awsloadbalancer
 
-#run puppet agent again
-#sudo -i puppet agent -t
-
 #Refresh MoM puppet agent run
 /bin/curl -k -H "X-Authentication:${rbactoken}" \
 https://${momhostname}:8143/orchestrator/v1/command/deploy \
