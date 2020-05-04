@@ -1,4 +1,5 @@
 #!/bin/bash
+#Setup the EFS DNS Name
 
 efsdnsname=<EFS DNS Name>
 
