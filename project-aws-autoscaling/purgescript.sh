@@ -4,8 +4,6 @@
 
 momhostname=<MoM Hostname>
 rbactoken=<RBAC Token>
-
-#capath=<ca.pem>
 cerfile=<certfile name>
 keyfile=<keyfile name>
 
