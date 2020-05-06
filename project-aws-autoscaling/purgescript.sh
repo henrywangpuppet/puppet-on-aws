@@ -5,15 +5,15 @@
 momhostname=<MoM Hostname>
 rbactoken=<RBAC Token>
 
-capath=<ca.pem Path>
-cerfilepath=<cert.pem Path>
-keyfilepath=<key.pem Path>
+#capath=<ca.pem>
+cerfile=<certfile name>
+keyfile=<keyfile name>
 
 /bin/curl -X PUT \
 --tlsv1 \
---cacert ${capath} \
---cert ${cerfilepath} \
---key ${keyfilepath} \
+--cacert /home/$USER/nodepurge/ca.pem \
+--cert /home/$USER/nodepurge/${cerfile} \
+--key /home/$USER/nodepurge/${keyfile} \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -d '{"desired_state":"revoked"}' \
@@ -21,17 +21,17 @@ https://${momhostname}:8140/puppet-ca/v1/certificate_status/$HOSTNAME
 
 /bin/curl -X DELETE \
 --tlsv1 \
---cacert ${capath} \
---cert ${cerfilepath} \
---key ${keyfilepath} \
+--cacert /home/$USER/nodepurge/ca.pem \
+--cert /home/$USER/nodepurge/${cerfile} \
+--key /home/$USER/nodepurge/${keyfile} \
 -H "Accept: application/json" \
 https://${momhostname}:8140/puppet-ca/v1/certificate_status/$HOSTNAME
 
 /bin/curl -X POST \
 --tlsv1 \
---cacert ${capath} \
---cert ${cerfilepath} \
---key ${keyfilepath} \
+--cacert /home/$USER/nodepurge/ca.pem \
+--cert /home/$USER/nodepurge/${cerfile} \
+--key /home/$USER/nodepurge/${keyfile} \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -d "{\"command\":\"deactivate node\",\"version\":3,\"payload\":{\"certname\":\"$HOSTNAME\"}}" \
