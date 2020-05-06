@@ -7,8 +7,8 @@ Before=shutdown.target reboot.target
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/bin/bash /home/$USER/nodepurge/startupscript.sh
-ExecStop=/bin/bash /home/$USER/nodepurge/purgescript.sh
+ExecStart=/bin/bash /home/awsnodemanagement/startupscript.sh
+ExecStop=/bin/bash /home/awsnodemanagement/purgescript.sh
 
 [Install]
 WantedBy=multi-user.target
