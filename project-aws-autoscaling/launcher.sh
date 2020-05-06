@@ -2,7 +2,7 @@
 #Setup Configuration Variables First
 
 momhostname=<MoM hostname>
-awslbdns=<AWS LoadBalancer DNS>
+awslbdns=<AWS LoadBalancer DNS Name>
 rbactoken=<RBAC Token>
 
 #install Puppet Agent
