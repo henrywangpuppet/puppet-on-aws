@@ -15,7 +15,7 @@ https://${momhostname}:8143/orchestrator/v1/command/deploy \
 -H "Content-Type: application/json"
 
 #enable shutdown script
-cp /home/ec2-user/nodepurge/nodepurge.service /etc/systemd/system/nodepurge.service
+cp /home/$USER/nodepurge/nodepurge.service /etc/systemd/system/nodepurge.service
 systemctl daemon-reload
 systemctl enable nodepurge.service
 systemctl start nodepurge.service
