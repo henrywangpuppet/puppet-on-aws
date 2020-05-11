@@ -14,7 +14,7 @@ https://${momhostname}:8143/orchestrator/v1/command/deploy \
 -X POST -d "{\"environment\":\"production\",\"scope\": {\"nodes\":  [\"${momhostname}\"]}}" \
 -H "Content-Type: application/json"
 
-#enable shutdown script
+#enable startup and shutdown script
 cp /home/awsnodemanagement/nodepurge.service /etc/systemd/system/nodepurge.service
 systemctl daemon-reload
 systemctl enable nodepurge.service
