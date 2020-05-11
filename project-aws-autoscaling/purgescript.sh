@@ -7,6 +7,7 @@ rbactoken=<RBAC Token>
 cerfile=<certfile name>
 keyfile=<keyfile name>
 
+#Node Purge APIs
 /bin/curl -X PUT \
 --tlsv1 \
 --cacert /home/awsnodemanagement/ca.pem \
