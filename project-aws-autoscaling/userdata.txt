@@ -3,6 +3,7 @@
 
 efsdnsname=<EFS DNS Name>
 
+#mount EFS and execute launcher.sh script
 sudo yum install -y nfs-utils
 mkdir /mnt/efs
 sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport ${efsdnsname}:/ /mnt/efs
