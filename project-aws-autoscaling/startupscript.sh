@@ -5,7 +5,7 @@ momhostname=<MoM Hostname>
 rbactoken=<RBAC Token>
 
 #Make sure a Puppet run happens before informing MoM
-sudo -i puppet agent -t
+sudo /opt/puppetlabs/bin/puppet agent -t
 
 #trigger a MoM agent run to inform the compiler has been back
 /bin/curl -k -H "X-Authentication:${rbactoken}" \
