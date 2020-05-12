@@ -7,6 +7,7 @@ rbactoken=<RBAC Token>
 
 #install Puppet Agent
 /bin/curl -k https://${momhostname}:8140/packages/current/install.bash | sudo bash -s main:dns_alt_names=$awslbdns extension_requests:pp_role=awsloadbalancer -- --puppet-service-ensure stopped
+sudo /opt/puppetlabs/bin/puppet resource service puppet ensure=running
 
 #enable startup and shutdown script
 cp /home/awsnodemanagement/nodepurge.service /etc/systemd/system/nodepurge.service
